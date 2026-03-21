@@ -3,6 +3,12 @@ import Navbar from './components/Navbar'
 const SECTIONS = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About Us' },
+  { id: 'events', label: 'Events' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'blog', label: 'Blog' },
+  { id: 'team', label: 'Team' },
+  { id: 'contributors', label: 'Contributors' },
+  { id: 'join', label: 'Join Us' },
 ]
 
 function App() {

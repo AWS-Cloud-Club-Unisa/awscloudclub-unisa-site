@@ -3,6 +3,11 @@ import { useState, useEffect } from 'react'
 const NAV_LINKS = [
   { label: 'Home', href: '#home' },
   { label: 'About Us', href: '#about' },
+  { label: 'Events', href: '#events' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Blog', href: '#blog' },
+  { label: 'Team', href: '#team' },
+  { label: 'Contributors', href: '#contributors' },
 ] as const
 
 export default function Navbar() {
