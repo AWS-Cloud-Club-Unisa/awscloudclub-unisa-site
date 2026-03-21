@@ -16,13 +16,17 @@ function App() {
     <>
       <Navbar />
       <main className="pt-16">
-        {SECTIONS.map(({ id, label }) => (
+        {SECTIONS.map(({ id, label }, i) => (
           <section
             key={id}
             id={id}
-            className="min-h-screen flex items-center justify-center border-b border-gray-100"
+            className={`min-h-screen flex flex-col items-center justify-center gap-4 ${
+              i % 2 === 0 ? 'bg-white' : 'bg-[#5a0067]/[0.03]'
+            }`}
           >
-            <h1 className="text-4xl font-bold text-gray-800">{label}</h1>
+            <span className="w-10 h-1 rounded-full bg-[#5a0067]" />
+            <h2 className="text-4xl font-bold text-gray-900">{label}</h2>
+            <p className="text-gray-400 text-sm tracking-wide uppercase">Section content coming soon</p>
           </section>
         ))}
       </main>

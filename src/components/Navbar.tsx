@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import awsLogo from '/aws-logo-logo.png'
 
 const NAV_LINKS = [
   { label: 'Home', href: '#home' },
@@ -27,11 +28,8 @@ export default function Navbar() {
     }
   }, [])
 
-  // Close mobile menu on resize to desktop
   useEffect(() => {
-    const onResize = () => {
-      if (window.innerWidth >= 768) setMenuOpen(false)
-    }
+    const onResize = () => { if (window.innerWidth >= 768) setMenuOpen(false) }
     window.addEventListener('resize', onResize)
     return () => window.removeEventListener('resize', onResize)
   }, [])
@@ -43,57 +41,69 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-200 ${
-        scrolled ? 'shadow-md' : ''
-      } bg-white border-b border-gray-100`}
+      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${
+        scrolled
+          ? 'shadow-[0_2px_20px_rgba(90,0,103,0.10)] border-b border-[#5a0067]/10'
+          : 'border-b border-gray-100'
+      }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
+
           {/* Logo */}
           <a
             href="#home"
             onClick={() => handleNavClick('#home')}
-            className="flex items-center gap-2 shrink-0"
-            aria-label="AWS Cloud Club UNISA - Home"
+            className="flex items-center gap-2.5 shrink-0 group"
+            aria-label="AWS Cloud Club UNISA – Home"
           >
-            {/* AWS-style hexagon icon */}
-            <span className="flex items-center justify-center w-8 h-8 rounded bg-[#FF9900] text-white font-bold text-sm select-none">
-              AWS
-            </span>
-            <span className="font-semibold text-gray-900 text-sm sm:text-base leading-tight">
-              Cloud Club{' '}
-              <span className="text-[#FF9900]">UNISA</span>
-            </span>
+            <img
+              src={awsLogo}
+              alt="AWS"
+              className="h-7 w-auto object-contain"
+            />
+            <div className="flex flex-col leading-none">
+              <span className="text-[13px] font-semibold tracking-wide text-gray-800">
+                Cloud Club
+              </span>
+              <span className="text-[13px] font-bold tracking-widest text-[#5a0067] uppercase">
+                UNISA
+              </span>
+            </div>
           </a>
 
-          {/* Desktop nav links */}
-          <ul className="hidden md:flex items-center gap-1" role="list">
+          {/* Desktop nav */}
+          <ul className="hidden md:flex items-center gap-0.5" role="list">
             {NAV_LINKS.map(({ label, href }) => (
               <li key={href}>
                 <a
                   href={href}
                   onClick={() => handleNavClick(href)}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-150 ${
+                  className={`relative px-3.5 py-2 text-sm font-medium rounded-md transition-all duration-150 ${
                     activeHash === href
-                      ? 'text-[#FF9900] bg-orange-50'
-                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                      ? 'text-[#5a0067]'
+                      : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'
                   }`}
                   aria-current={activeHash === href ? 'page' : undefined}
                 >
                   {label}
+                  {/* Active underline indicator */}
+                  {activeHash === href && (
+                    <span className="absolute bottom-0 left-3.5 right-3.5 h-[2px] rounded-full bg-[#5a0067]" />
+                  )}
                 </a>
               </li>
             ))}
 
             {/* Join Us CTA */}
-            <li>
+            <li className="ml-3">
               <a
                 href="#join"
                 onClick={() => handleNavClick('#join')}
-                className={`ml-2 px-4 py-2 rounded-md text-sm font-semibold transition-colors duration-150 ${
+                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-150 ${
                   activeHash === '#join'
-                    ? 'bg-orange-600 text-white'
-                    : 'bg-[#FF9900] text-white hover:bg-orange-500'
+                    ? 'bg-[#3d0047] text-white shadow-md'
+                    : 'bg-[#5a0067] text-white hover:bg-[#6e0080] shadow-sm hover:shadow-md'
                 }`}
                 aria-current={activeHash === '#join' ? 'page' : undefined}
               >
@@ -106,20 +116,18 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setMenuOpen((o) => !o)}
-            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors"
+            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-[#5a0067] hover:bg-[#5a0067]/5 transition-colors"
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           >
             <span className="sr-only">{menuOpen ? 'Close menu' : 'Open menu'}</span>
             {menuOpen ? (
-              /* X icon */
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              /* Hamburger icon */
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
@@ -128,33 +136,35 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         {menuOpen && (
-          <div id="mobile-menu" className="md:hidden border-t border-gray-100 py-2">
-            <ul role="list" className="flex flex-col gap-1">
+          <div
+            id="mobile-menu"
+            className="md:hidden border-t border-gray-100 py-3 animate-[fadeIn_0.15s_ease]"
+          >
+            <ul role="list" className="flex flex-col gap-0.5">
               {NAV_LINKS.map(({ label, href }) => (
                 <li key={href}>
                   <a
                     href={href}
                     onClick={() => handleNavClick(href)}
-                    className={`block px-4 py-2.5 rounded-md text-sm font-medium transition-colors duration-150 ${
+                    className={`flex items-center gap-2 px-4 py-2.5 rounded-md text-sm font-medium transition-colors duration-150 ${
                       activeHash === href
-                        ? 'text-[#FF9900] bg-orange-50'
-                        : 'text-gray-700 hover:text-gray-900 hover:bg-gray-50'
+                        ? 'text-[#5a0067] bg-[#5a0067]/5'
+                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                     }`}
                     aria-current={activeHash === href ? 'page' : undefined}
                   >
+                    {activeHash === href && (
+                      <span className="w-1 h-4 rounded-full bg-[#5a0067] shrink-0" />
+                    )}
                     {label}
                   </a>
                 </li>
               ))}
-              <li className="pt-1 pb-1">
+              <li className="pt-2 px-4">
                 <a
                   href="#join"
                   onClick={() => handleNavClick('#join')}
-                  className={`block mx-4 px-4 py-2.5 rounded-md text-sm font-semibold text-center transition-colors duration-150 ${
-                    activeHash === '#join'
-                      ? 'bg-orange-600 text-white'
-                      : 'bg-[#FF9900] text-white hover:bg-orange-500'
-                  }`}
+                  className="block w-full py-2.5 rounded-full text-sm font-semibold text-center text-white bg-[#5a0067] hover:bg-[#6e0080] transition-colors"
                   aria-current={activeHash === '#join' ? 'page' : undefined}
                 >
                   Join Us
