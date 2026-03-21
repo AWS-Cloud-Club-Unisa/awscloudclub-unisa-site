@@ -60,13 +60,13 @@ export default function Navbar() {
             <img
               src={awsLogo}
               alt="AWS"
-              className="h-7 w-auto object-contain"
+              className="h-10 w-auto object-contain"
             />
             <div className="flex flex-col leading-none">
-              <span className="text-[13px] font-semibold tracking-wide text-gray-800">
-                Cloud Club
+              <span className="text-[15px] font-semibold tracking-wide text-gray-800">
+               AWS Cloud Club
               </span>
-              <span className="text-[13px] font-bold tracking-widest text-[#5a0067] uppercase">
+              <span className="text-[20px] font-bold tracking-widest text-[#5a0067] uppercase">
                 UNISA
               </span>
             </div>
