@@ -1,3 +1,5 @@
+import MeetupIcon, { MEETUP_URL } from '../MeetupIcon'
+
 export default function Home() {
   return (
     <section id="home" className="relative overflow-hidden bg-white">
@@ -47,10 +49,13 @@ export default function Home() {
         {/* CTAs */}
         <div className="animate-fade-up delay-400 mt-10 flex flex-wrap justify-center gap-4">
           <a
-            href="#join"
-            className="px-7 py-3.5 rounded-full text-sm font-semibold text-white shadow-lg shadow-[#5a0067]/25 transition-all duration-200 hover:shadow-[#5a0067]/40 hover:scale-[1.03]"
+            href={MEETUP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-semibold text-white shadow-lg shadow-[#5a0067]/25 transition-all duration-200 hover:shadow-[#5a0067]/40 hover:scale-[1.03]"
             style={{ background: 'linear-gradient(135deg, #5a0067, #8b00a0)' }}
           >
+            <MeetupIcon />
             Join the Club
           </a>
           <a
