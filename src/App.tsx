@@ -1,5 +1,6 @@
 import type { ComponentType } from 'react'
 import { useEffect, useState } from 'react'
+import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import About from './components/sections/About'
 import Home from './components/sections/Home'
