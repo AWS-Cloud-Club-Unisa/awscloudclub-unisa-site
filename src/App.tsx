@@ -3,11 +3,15 @@ import { useEffect, useState } from 'react'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import About from './components/sections/About'
+import Events from './components/sections/Events'
 import Home from './components/sections/Home'
+import Team from './components/sections/Team'
 
 const SECTIONS: Record<string, ComponentType> = {
   '#home':         Home,
   '#about':        About,
+  '#events':       Events,
+  '#team':         Team,
 }
 
 function getHash() {
