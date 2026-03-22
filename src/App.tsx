@@ -35,6 +35,7 @@ function App() {
       <main className="pt-16">
         <Section key={active} />
       </main>
+      <Footer />
     </>
   )
 }
