@@ -132,7 +132,48 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="relative px-6 py-24 sm:py-32 bg-[#5a0067]/[0.03]">
+
+      {/* ── Who Can Join ─────────────────────────────────────────── */}
+      <div className="relative px-5 sm:px-6 py-16 sm:py-24 lg:py-32 bg-[#5a0067]/[0.03]">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+
+            <div>
+              <p className="text-xs font-semibold tracking-widest text-[#5a0067] uppercase mb-3">Membership</p>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight">
+                Everyone<br />is welcome.
+              </h2>
+              <p className="mt-4 sm:mt-5 text-gray-500 text-sm sm:text-base leading-relaxed max-w-md">
+                The club is student-led, but open to anyone curious about the cloud. Whether you are a student, an IT professional, or simply a cloud enthusiast, there is a place for you here.
+              </p>
+              <a
+                href={MEETUP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 sm:mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#5a0067] hover:gap-3 transition-all duration-200"
+              >
+                Get started today
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              {['Students', 'IT Professionals', 'Cloud Enthusiasts', 'Career Changers'].map((tag) => (
+                <div
+                  key={tag}
+                  className="rounded-2xl border border-gray-100 bg-white p-4 sm:p-6 shadow-sm hover:shadow-md hover:border-[#5a0067]/20 transition-all duration-200"
+                >
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#5a0067]/10 flex items-center justify-center mb-2 sm:mb-3">
+                    <span className="w-2 h-2 rounded-full bg-[#5a0067]" />
+                  </div>
+                  <p className="text-xs sm:text-sm font-semibold text-gray-800">{tag}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )
