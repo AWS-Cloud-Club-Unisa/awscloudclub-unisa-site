@@ -1,11 +1,12 @@
+import type { ComponentType } from 'react'
 import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
-import Home from './components/sections/Home'
 import About from './components/sections/About'
+import Home from './components/sections/Home'
 
-const SECTIONS: Record<string, JSX.Element> = {
-  '#home':         <Home />,
-  '#about':        <About />,
+const SECTIONS: Record<string, ComponentType> = {
+  '#home':         Home,
+  '#about':        About,
 }
 
 function getHash() {
@@ -26,11 +27,13 @@ function App() {
     return () => window.removeEventListener('hashchange', onHashChange)
   }, [])
 
+  const Section = SECTIONS[active]
+
   return (
     <>
       <Navbar />
       <main className="pt-16">
-        {SECTIONS[active]}
+        <Section key={active} />
       </main>
     </>
   )
