@@ -41,7 +41,7 @@ export default function Home() {
           <span className="font-semibold text-gray-700">Content</span>,{' '}
           <span className="font-semibold text-gray-700">Community</span>, and{' '}
           <span className="font-semibold text-gray-700">Events</span> to help
-          you master the cloud — regardless of your field.
+          you learn the cloud .
         </p>
 
         {/* CTAs */}
@@ -102,7 +102,7 @@ export default function Home() {
                   </svg>
                 ),
                 title: 'Community',
-                desc: 'A welcoming space for all students — tech or non-tech — to connect, collaborate, and grow together.',
+                desc: 'A welcoming space for all students, in tech and non-tech fields alike, to connect, collaborate, and grow together.',
               },
               {
                 icon: (

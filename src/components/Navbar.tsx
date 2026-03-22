@@ -55,7 +55,7 @@ export default function Navbar() {
             href="#home"
             onClick={() => handleNavClick('#home')}
             className="flex items-center gap-2.5 shrink-0 group"
-            aria-label="AWS Cloud Club UNISA – Home"
+            aria-label="AWS Cloud Club UNISA Home"
           >
             <img
               src={awsLogo}
