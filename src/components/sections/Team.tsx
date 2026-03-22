@@ -1,4 +1,4 @@
-const MEMBERS = [
+export const MEMBERS = [
   {
     name: 'Previn Bogopa',
     role: 'Captain',
