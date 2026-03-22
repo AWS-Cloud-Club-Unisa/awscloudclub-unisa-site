@@ -1,5 +1,22 @@
 import MeetupIcon, { MEETUP_URL } from '../MeetupIcon'
 
+const REVIEWS = [
+  { name: 'Madlalakhaya',       tags: ['Engaging', 'Made an impact', 'Welcoming host', 'Inclusive attendees', 'Good setting', 'I felt safe'] },
+  { name: 'Charmaine Sekulane', tags: ['Inclusive attendees', 'Met new people', 'Punctual start', 'Welcoming host'] },
+  { name: 'Christopher',        tags: ['Engaging'] },
+  { name: 'Marion Angela O.',   tags: ['Was as described', 'Engaging', 'Made an impact', 'Welcoming host'] },
+  { name: 'Nontobeko Nkomo',    tags: ['Good setting', 'Punctual start', 'Welcoming host'] },
+  { name: 'Nokukhanya',         tags: ['Was as described', 'Engaging', 'Welcoming host'] },
+  { name: 'Mandela Mua',        tags: ['Engaging', 'Welcoming host'] },
+  { name: 'Dineo Ndlovu',       tags: ['Engaging', 'Made an impact', 'Good setting', 'Welcoming host'] },
+  { name: 'Makahane Thakhani',  tags: ['Engaging'] },
+  { name: 'Benjamin Wakida',    tags: ['Was as described', 'Punctual start', 'I felt safe', 'Welcoming host'] },
+  { name: 'Ditshego',           tags: ['Made an impact'] },
+]
+
+// Duplicate for seamless infinite loop
+const MARQUEE_ITEMS = [...REVIEWS, ...REVIEWS]
+
 export default function Home() {
   return (
     <section id="home" className="relative overflow-hidden bg-white">
@@ -225,6 +242,80 @@ export default function Home() {
 
           </div>
         </div>
+      </div>
+
+      {/* ── Reviews ──────────────────────────────────────────────── */}
+      <div className="relative py-16 sm:py-24 bg-[#5a0067]/[0.03] overflow-hidden">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-0 w-24 z-10"
+          style={{ background: 'linear-gradient(to right, rgba(249,247,250,0.95), transparent)' }} />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 w-24 z-10"
+          style={{ background: 'linear-gradient(to left, rgba(249,247,250,0.95), transparent)' }} />
+
+        {/* Header */}
+        <div className="relative max-w-6xl mx-auto px-5 sm:px-6 text-center mb-10 sm:mb-12">
+          <p className="text-xs font-semibold tracking-widest text-[#5a0067] uppercase mb-3">What people say</p>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
+            Our Reviews
+          </h2>
+          <div className="mt-4 inline-flex items-center gap-3 flex-wrap justify-center">
+            <div className="flex items-center gap-1.5">
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} className="w-4 h-4 text-[#5a0067]" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+              <span className="text-sm font-bold text-gray-900 ml-1">4.7</span>
+              <span className="text-sm text-gray-400">· 14 reviews</span>
+            </div>
+            <a
+              href="https://www.meetup.com/aws-cloud-club-at-university-of-south-africa/feedback-overview/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-semibold text-[#5a0067] border border-[#5a0067]/25 px-3 py-1 rounded-full hover:bg-[#5a0067]/5 transition-colors duration-150"
+            >
+              View all on Meetup →
+            </a>
+          </div>
+        </div>
+
+        {/* Marquee track */}
+        <div className="flex w-full overflow-hidden">
+          <div className="animate-marquee flex gap-4 w-max">
+            {MARQUEE_ITEMS.map(({ name, tags }, i) => (
+              <div
+                key={`${name}-${i}`}
+                className="w-64 shrink-0 rounded-2xl border border-gray-100 bg-white p-5 shadow-sm"
+              >
+                {/* Stars */}
+                <div className="flex gap-0.5 mb-3">
+                  {[...Array(5)].map((_, s) => (
+                    <svg key={s} className="w-3.5 h-3.5 text-[#5a0067]" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {tags.map((tag) => (
+                    <span key={tag} className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#5a0067]/8 text-[#5a0067]">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Name */}
+                <div className="flex items-center gap-2 pt-3 border-t border-gray-50">
+                  <div className="w-6 h-6 rounded-full bg-[#5a0067]/15 flex items-center justify-center text-[10px] font-bold text-[#5a0067]">
+                    {name[0].toUpperCase()}
+                  </div>
+                  <p className="text-xs font-semibold text-gray-700 truncate">{name}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
 
     </section>
