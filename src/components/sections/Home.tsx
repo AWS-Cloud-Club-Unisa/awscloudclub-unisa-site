@@ -161,7 +161,7 @@ export default function Home() {
                 Everyone<br />is welcome.
               </h2>
               <p className="mt-4 sm:mt-5 text-gray-500 text-sm sm:text-base leading-relaxed max-w-md">
-                The club is student-led, but open to anyone curious about the cloud. Whether you are a student, an IT professional, or simply a cloud enthusiast, there is a place for you here.
+                The club is student-led, open to anyone curious about the cloud. Whether you are a student, an IT professional, or simply a cloud enthusiast, there is a place for you here.
               </p>
               <a
                 href={MEETUP_URL}

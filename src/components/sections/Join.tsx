@@ -91,7 +91,7 @@ export default function Join() {
                 Skills that matter<br />beyond the cloud.
               </h3>
               <p className="mt-5 text-gray-500 text-base leading-relaxed">
-                Membership isn't just about cloud certifications. You'll sharpen the professional skills every employer looks for and build a network that opens real doors.
+                Membership goes beyond technical skills. You'll sharpen the professional skills every employer looks for and build a network that opens real doors.
               </p>
             </div>
 
