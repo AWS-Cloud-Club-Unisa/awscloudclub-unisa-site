@@ -175,6 +175,58 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* ── What is the Cloud ────────────────────────────────────── */}
+      <div className="relative px-5 sm:px-6 py-16 sm:py-24 lg:py-32 overflow-hidden">
+        <div aria-hidden="true" className="pointer-events-none absolute right-0 top-0 w-[400px] h-[400px] rounded-full bg-[#5a0067] opacity-[0.04] blur-[120px]" />
+
+        <div className="relative max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+
+            {/* Text — comes first on mobile */}
+            <div className="order-1 lg:order-2">
+              <p className="text-xs font-semibold tracking-widest text-[#5a0067] uppercase mb-3">What we focus on</p>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight">
+                AWS Cloud Club<br />@ Unisa
+              </h2>
+              <p className="mt-4 sm:mt-5 text-gray-500 text-sm sm:text-base leading-relaxed">
+                We are centred on Amazon Web Services, the world's leading cloud platform. From core cloud concepts to real-world deployments, everything we do is hands-on and AWS-focused.
+              </p>
+              <p className="mt-3 sm:mt-4 text-gray-500 text-sm sm:text-base leading-relaxed">
+                Whether you are getting started or looking to go deeper, our sessions cover the skills that matter most in today's industry.
+              </p>
+            </div>
+
+            {/* Visual block */}
+            <div className="order-2 lg:order-1">
+              <div className="relative rounded-3xl border border-[#5a0067]/10 bg-gradient-to-br from-[#5a0067]/5 to-[#8b00a0]/5 p-6 sm:p-10 overflow-hidden">
+                <div aria-hidden="true" className="absolute -bottom-8 -right-8 w-48 h-48 rounded-full bg-[#5a0067]/10 blur-2xl" />
+                <div className="relative space-y-3 sm:space-y-4">
+                  {[
+                    'AWS Cloud Services',
+                    'Cloud Architecture & Design',
+                    'DevOps & CI/CD Pipelines',
+                    'Serverless & Containers',
+                    'Cloud Security Fundamentals',
+                    'AWS Certifications',
+                  ].map((item) => (
+                    <div key={item} className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-full border-2 border-[#5a0067]/30 flex items-center justify-center shrink-0">
+                        <svg className="w-3 h-3 text-[#5a0067]" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414L8.414 15 3.293 9.879a1 1 0 011.414-1.414L8.414 12.172l6.879-6.879a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <span className="text-sm font-medium text-gray-700">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
     </section>
   )
 }
