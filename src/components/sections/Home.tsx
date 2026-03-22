@@ -318,6 +318,37 @@ export default function Home() {
 
       </div>
 
+      {/* ── Sponsor CTA ──────────────────────────────────────────── */}
+      <div className="relative py-20 sm:py-28 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-xs font-semibold tracking-widest text-[#5a0067] uppercase mb-3">Partner with us</p>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight">
+            Help us build the next generation<br className="hidden sm:block" /> of cloud talent.
+          </h2>
+          <p className="mt-5 text-gray-500 text-base max-w-2xl mx-auto leading-relaxed">
+            We run free, community-driven events for students and aspiring cloud professionals across South Africa. If your company believes in developing tech talent, we would love to partner with you. Sponsorships go directly towards event costs, guest experiences, and club resources.
+          </p>
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <a
+              href="mailto:awscloudclubunisa@gmail.com?subject=Sponsorship%20Enquiry"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold text-white shadow-lg shadow-[#5a0067]/20 hover:shadow-xl hover:scale-[1.03] transition-all duration-200"
+              style={{ background: 'linear-gradient(135deg, #5a0067, #8b00a0)' }}
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+              Get in touch
+            </a>
+            <a
+              href="#about"
+              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-semibold text-gray-700 border border-gray-200 hover:border-[#5a0067]/30 hover:text-[#5a0067] transition-all duration-200"
+            >
+              Learn about us
+            </a>
+          </div>
+        </div>
+      </div>
+
     </section>
   )
 }

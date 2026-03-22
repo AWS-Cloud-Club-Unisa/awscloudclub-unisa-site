@@ -3,15 +3,23 @@ import { useEffect, useState } from 'react'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import About from './components/sections/About'
+// import Blog from './components/sections/Blog'
+// import Contributors from './components/sections/Contributors'
 import Events from './components/sections/Events'
 import Home from './components/sections/Home'
+import Join from './components/sections/Join'
+// import Projects from './components/sections/Projects'
 import Team from './components/sections/Team'
 
 const SECTIONS: Record<string, ComponentType> = {
-  '#home':         Home,
-  '#about':        About,
-  '#events':       Events,
-  '#team':         Team,
+  '#home':   Home,
+  '#about':  About,
+  '#events': Events,
+  // '#projects':     Projects,
+  // '#blog':         Blog,
+  '#team':   Team,
+  // '#contributors': Contributors,
+  '#join':   Join,
 }
 
 function getHash() {
